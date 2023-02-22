@@ -8,6 +8,9 @@ font pango:RobotoMono Nerd Font Regular 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#start polybar
+#exec polybar example --config=~/.config/polybar/config.ini
+
 # start a terminal
 bindsym $mod+Return exec terminator
 
@@ -15,14 +18,14 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Escape exec shutdown -h now
 
 #start a browser
-bindsym $mod+Shift+h exec google-chrome-stable --no-sandbox
+bindsym $mod+Shift+h exec firefox
 for_window [class="Firefox"] move to workspace 2
 
 #lock desktop
-bindsym $mod+Shift+d exec i3lock-fancy
+#bindsym $mod+Shift+d exec i3lock-fancy
 
 #touch_pad
-exec xinput set-prop 11 323 1
+#exec xinput set-prop 11 323 1
 
 #lang_us_ru
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:ctrl_alt_toggle"
@@ -143,8 +146,8 @@ bar {
         position top
         height 26
         font pango:RobotoMono Nerd Font Regular 7.5
-        colors {
-            statusline #EEEEEE
+       colors {
+          statusline #EEEEEE
             background #1C1D2B88
             focused_workspace #282A3E88 #282A3E88 #FFFFFF
             statusline #E6FFF5
@@ -153,8 +156,8 @@ bar {
 
 # i3-gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 4
-gaps outer 4
+gaps inner 5
+gaps outer 5
 
 client.focused  #82c8ff #82c8ff #dddddd
 client.focused_inactive #333333 #333333 #888888
